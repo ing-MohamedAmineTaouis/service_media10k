@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Categories List</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <header class="text-center py-4">
+        <h1>Categories List</h1>
+    </header>
+    <main>
+        <table class="table table-secondary table-striped">
+            <thead>
+            <tr>
+                <th>Category Id</th>
+                <th>Category Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="categorie : ${categoriesJsp}">
+                <td th:text="${categorie.idCategorie}"></td>
+                <td th:text="${categorie.nomCategorie}"></td>
+                <td>
+                    <a th:href="@{'deleteCategorie?id=' + ${categorie.idCategorie}}"
+                       onclick="return confirm('Are you sure to delete this item ?')"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer class="text-center py-4">
+        <a th:href="@{'createCategorie'}" class="btn btn-success btn-lg">Add categorie</a>
+    </footer>
+</div>
+</body>
+</html>
