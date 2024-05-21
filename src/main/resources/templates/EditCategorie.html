@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Edition</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div th:insert="fragments/nav :: nav"></div>
+<main>
+    <header class="text-center pb-4">
+        <h1>Categorie Update</h1>
+    </header>
+    <form action="updateCategorie" method="post" class="container">
+        <div class="form-group mb-2">
+            <label hidden for="idCategorie">Product Name:</label>
+            <input hidden type="text" class="form-control" id="idCategorie" name="idCategorie" th:value="${categoriesJsp.idCategorie}">
+        </div>
+        <div class="form-group mb-2">
+            <label for="nomCategorie">Product Name:</label>
+            <input type="text" class="form-control" id="nomCategorie" name="nomCategorie" th:value="${categoriesJsp.nomCategorie}" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Update</button>
+    </form>
+</main>
+<footer class="text-center pt-4">
+    <a href="categoriesList" class="btn btn-secondary">Categories List</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

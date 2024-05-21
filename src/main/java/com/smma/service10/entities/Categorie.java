@@ -1,11 +1,15 @@
 package com.smma.service10.entities;
 
 
-import com.smma.service10.entities.Product;
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.util.List;
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Categorie {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCategorie;
@@ -20,10 +24,6 @@ public class Categorie {
                 ", nomCategorie='" + nomCategorie + '\'' +
                 ", Products=" + Products +
                 '}';
-    }
-
-    public Categorie() {
-        super();
     }
 
     public Categorie(String nomCategorie) {

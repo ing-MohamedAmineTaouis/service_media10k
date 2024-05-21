@@ -7,10 +7,10 @@ import java.util.List;
 
 @Service
 public interface ProductService {
-    Product updateProduct(Product service);
+    Product updateProduct(Product product);
 
-    void    deleteServiceById(Long id);
-    void    deleteAllServices();
+    void    deleteProductById(Long id);
+    void    deleteAllProducts();
 
     Product saveProduct(Product product);
 

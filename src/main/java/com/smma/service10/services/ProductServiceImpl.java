@@ -12,13 +12,13 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductRepository serviceRepository;
     @Override
-    public Product saveProduct(Product service) {
-        return serviceRepository.save(service);
+    public Product saveProduct(Product product) {
+        return serviceRepository.save(product);
     }
 
     @Override
-    public Product updateProduct(Product service) {
-        return serviceRepository.save(service);
+    public Product updateProduct(Product product) {
+        return serviceRepository.save(product);
     }
 
     @Override
@@ -33,12 +33,12 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public void deleteServiceById(Long id) {
+    public void deleteProductById(Long id) {
         serviceRepository.deleteById(id);
     }
 
     @Override
-    public void deleteAllServices() {
+    public void deleteAllProducts() {
         serviceRepository.deleteAll();
     }
 

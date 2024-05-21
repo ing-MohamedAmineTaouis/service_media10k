@@ -6,9 +6,10 @@
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.2.0/css/bootstrap.min.css">
 </head>
 <body>
+<div th:insert="fragments/nav :: nav"></div>
 <div class="container">
     <header class="text-center py-4">
-        <h1>Products List</h1>
+        <h1>Services List</h1>
     </header>
     <main>
         <table class="table table-striped">
@@ -17,6 +18,7 @@
                 <th>Product Id</th>
                 <th>Product Name</th>
                 <th>Product Price</th>
+                <th>Product Description</th>
                 <th>Product Category</th>
                 <th>Action</th>
             </tr>
@@ -26,6 +28,7 @@
                 <td th:text="${product.idProduct}"></td>
                 <td th:text="${product.nomProduct}"></td>
                 <td th:text="${product.prixProduct}"></td>
+                <td th:text="${product.descriptionProduct}"></td>
                 <td th:text="${product.categorieProduct.nomCategorie}"></td>
                 <td>
                     <a th:href="@{'showProduct?id=' + ${product.idProduct}}"
@@ -42,5 +45,6 @@
         <a th:href="@{/createProduct}" class="btn btn-success btn-lg">Product Creation</a>
     </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

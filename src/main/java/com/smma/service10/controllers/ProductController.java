@@ -49,7 +49,7 @@ public class ProductController {
 
     @RequestMapping("/deleteProduct")
     public String deleteProduct(@RequestParam("id") Long id , ModelMap modelMap) {
-        productService.deleteServiceById(id);
+        productService.deleteProductById(id);
         List<Product> productsController = productService.getAllProducts();
         modelMap.addAttribute( "productsJsp", productsController);
         return "ProductsList";
@@ -58,7 +58,6 @@ public class ProductController {
     public String showProduct(@RequestParam("id") Long id , ModelMap modelMap){
         Product productController = productService.getProductById(id);
         modelMap.addAttribute("productJsp", productController);
-        //categorieService.deleteCategoryById(id);
         List<Categorie> categorieController = categorieService.getAllCategories();
         modelMap.addAttribute( "categories", categorieController);
         return "EditProduct";
