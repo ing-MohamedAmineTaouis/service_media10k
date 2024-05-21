@@ -15,12 +15,13 @@ public class Service10Application {
 	@Bean
 	public CommandLineRunner demo(AccountService accountService) {
 		return args -> {
+			//accountService.CreateUser("admin","123","admin@gmail.com","123");
 //            accountService.CreateUser("amine","123","amine@gmail.com","123");
 ////            accountService.CreateRole("ADMIN");
 ////            accountService.CreateRole("CLIENT");
 //
 //            accountService.AddRoleToUser("admin","ADMIN");
-//            accountService.AddRoleToUser("client","CLIENT");
+//            accountService.AddRoleToUser("amine","CLIENT");
             //System.out.println(accountService.loadUserByUsername("admin").getEmail());
 		};
 	}
